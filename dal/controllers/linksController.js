@@ -1,4 +1,4 @@
-import {linkList} from '../data';
+import {linkList, linkIdMap} from '../data';
 
 let _links = null;
 
@@ -9,6 +9,14 @@ class Links {
 
     getAllLinks() {
         return this.links;
+    }
+
+    voteForLink(id, username, value) {
+        try {
+            linkIdMap[id].votes[username] = value;
+        } catch (e) {
+            console.error('voteForLink: something went wrong');
+        }
     }
 
     addLink(data) {
