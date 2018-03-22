@@ -14,6 +14,7 @@ class Links {
     voteForLink(id, username, value) {
         try {
             linkIdMap[id].votes[username] = value;
+            linkIdMap[id].votesCount =  linkIdMap[id].votesCount + value;
         } catch (e) {
             console.error('voteForLink: something went wrong');
         }

@@ -6,6 +6,7 @@ export let linkList = [
         submittedData: 'Jan 22, 2017 08:43',
         username: 'Charlie',
         votes: {},
+        votesCount: 0,
         link: '/12',
         commentsCount:2
     },
@@ -16,6 +17,7 @@ export let linkList = [
         submittedData: 'Jan 22, 2017 08:43',
         username: 'Charlie',
         votes: {},
+        votesCount:0,
         link: '/12',
         commentsCount:0
     }
