@@ -10,6 +10,6 @@ export function vote_for_the_link(req, res) {
 }
 
 export function create_a_link(req, res) {
-
+    res.json(DAL.links.addLink(req.body));
 }
 
