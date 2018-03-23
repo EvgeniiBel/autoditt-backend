@@ -1,3 +1,5 @@
+import moment from 'moment';
+
 let nextId = 4;
 
 export class Comment {
@@ -10,5 +12,6 @@ export class Comment {
         this.comments = [];
         this.votes = {};
         this.votesCount = 0;
+        this.submittedData = moment().format('MMM D, YYYY HH:MM');
     }
 }

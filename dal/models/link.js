@@ -1,3 +1,5 @@
+import moment from 'moment';
+
 let nextId = 3;
 
 export class Link {
@@ -11,5 +13,6 @@ export class Link {
         this.votesCount = 0;
         this.comments = [];
         this.commentsCount = 0;
+        this.submittedData = moment().format('MMM D, YYYY HH:MM');
     }
 }
