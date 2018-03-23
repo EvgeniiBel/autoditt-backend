@@ -1,3 +1,5 @@
+import {linkList} from "./links";
+
 export const comments = [
     {
         id:0,
@@ -22,3 +24,10 @@ export const comments = [
         commentText: 'How is your task?'
     }
 ];
+
+//indexing functionality simulating
+export const commentIdsMap = {
+    0:comments[0],
+    1:comments[1],
+    3:comments[0].comments[0]
+};

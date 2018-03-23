@@ -23,6 +23,7 @@ export let linkList = [
     }
 ];
 
+//indexing functionality simulating
 export let linkIdMap = {
     0:linkList[0],
     1:linkList[1]

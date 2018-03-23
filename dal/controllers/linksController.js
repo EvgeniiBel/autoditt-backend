@@ -1,19 +1,17 @@
 import {linkList, linkIdMap} from '../data';
 import {Link} from '../models/link';
+import {sumVotes} from '../../services/helper';
 let ID_NEXT = 3;
-
-function sum(obj) {
-    return Object.keys( obj )
-        .reduce( function( sum, key ){
-            return sum + parseFloat( obj[key] );
-        }, 0 );
-}
 
 let _links = null;
 
 class Links {
     constructor() {
         this.links = linkList;
+    }
+
+    increaseCommentsCount(linkId) {
+        linkIdMap[linkId].commentsCount++;
     }
 
     getAllLinks() {
@@ -23,7 +21,7 @@ class Links {
     voteForLink(id, username, value) {
         try {
             linkIdMap[id].votes[username] = value;
-            linkIdMap[id].votesCount =  sum(linkIdMap[id].votes);
+            linkIdMap[id].votesCount =  sumVotes(linkIdMap[id].votes);
         } catch (e) {
             console.error('voteForLink: something went wrong');
         }
