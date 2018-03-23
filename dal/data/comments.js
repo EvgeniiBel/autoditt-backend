@@ -7,19 +7,27 @@ export const comments = [
         username:'Jenya',
         commentText: 'Developer',
         comments:[{
-            id:3,
-            linkId:null,
+            id:2,
+            parentWay:'0',
+            linkId:0,
             username:'Yuval',
             commentText: 'I\'ve got some tips to help:\n' +
             '\n' +
             'If its about grades then you\'ve gotta know that high school grades are mostly about diligence. Don\'t do your homework last minute, take good notes and actually review and revise them, and make sure you\'re asking the teacher or classmates about anything that confuses you.\n' +
             '\n' +
-            'If you just want to be smarter in general, it\'s all about constantly learning. Stay up to date on current events. Read magazines like National Geographic, The Atlantic, and Pacific Standard. Read books about your areas of interest. Listen to NPR. Learn some geography.'
+            'If you just want to be smarter in general, it\'s all about constantly learning. Stay up to date on current events. Read magazines like National Geographic, The Atlantic, and Pacific Standard. Read books about your areas of interest. Listen to NPR. Learn some geography.',
+            comments:[{
+                id:3,
+                parentWay:'0/2',
+                linkId:0,
+                username:'Jenya',
+                commentText: 'No Youval, you are not right.',
+            }]
         }]
     },
     {
         id:1,
-        linkId:0,
+        linkId:1,
         username:'Greg',
         commentText: 'How is your task?'
     }
@@ -29,5 +37,6 @@ export const comments = [
 export const commentIdsMap = {
     0:comments[0],
     1:comments[1],
-    3:comments[0].comments[0]
+    2:comments[0].comments[0],
+    3:comments[0].comments[0].comments[0]
 };

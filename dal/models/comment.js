@@ -1,9 +1,10 @@
-let nextId = 3;
+let nextId = 4;
 
 export class Comment {
     constructor(options) {
         this.id = nextId++;
         this.linkId = options.linkId;
+        this.parentWay = options.parentWay;
         this.commentText = options.commentText;
         this.username = options.username;
         this.comments = [];

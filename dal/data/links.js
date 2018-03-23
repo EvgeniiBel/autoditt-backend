@@ -8,7 +8,8 @@ export let linkList = [
         votes: {},
         votesCount: 0,
         link: '/12',
-        commentsCount:2
+        commentsCount:3,
+        comments:[]
     },
     {
         id:1,
@@ -19,7 +20,8 @@ export let linkList = [
         votes: {},
         votesCount:0,
         link: '/12',
-        commentsCount:0
+        commentsCount:1,
+        comments:[]
     }
 ];
 

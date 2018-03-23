@@ -21,7 +21,9 @@ class Links {
     }
 
     addComment(data) {
-        return !!data.parentId ? this.addCommentForComment(data) : this.addCommentForLink(data);
+        console.log('DAL:addComment');
+        console.log(data);
+        return !!data.parentWay ? this.addCommentForComment(data) : this.addCommentForLink(data);
     }
 
     addCommentForLink(data) {
@@ -31,10 +33,16 @@ class Links {
         return newComment;
     }
 
-    addCommentForComment(parentId, data) {
+    addCommentForComment(data) {
+        let way = data.parentWay.split('/');
+        let parentId = way[way.length -1];
         let newComment = new Comment(data);
         commentIdsMap[newComment.id] = newComment;
-        this.commentIdsMap[parentId].push(newComment);
+        let parentComment = this.commentIdsMap[parentId];
+        if (!parentComment.comments) {
+            parentComment.comments = [];
+        }
+        parentComment.comments.push(newComment);
         return newComment;
     }
 
