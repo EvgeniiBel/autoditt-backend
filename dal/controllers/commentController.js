@@ -15,14 +15,10 @@ class Links {
     }
 
     getAllCommentsForLink(linkId) {
-        console.log('DAL');
-        console.log(linkId);
         return this.comments.filter(comment => comment.linkId === parseInt(linkId));
     }
 
     addComment(data) {
-        console.log('DAL:addComment');
-        console.log(data);
         return !!data.parentWay ? this.addCommentForComment(data) : this.addCommentForLink(data);
     }
 
@@ -50,6 +46,7 @@ class Links {
         try {
             commentIdsMap[id].votes[username] = value;
             commentIdsMap[id].votesCount =  sumVotes(commentIdsMap[id].votes);
+            return commentIdsMap[id];
         } catch (e) {
             console.error('voteForComments: something went wrong');
         }

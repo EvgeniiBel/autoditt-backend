@@ -1,4 +1,4 @@
-import {list_all_comments, getAllCommentsForLink, addComment} from '../controllers/commentsController';
+import {list_all_comments, getAllCommentsForLink, addComment, voteForComment} from '../controllers/commentsController';
 
 export default function (app) {
     app.route('/comments')
@@ -6,5 +6,8 @@ export default function (app) {
         .post(addComment);
 
     app.route('/comments/:linkId')
-        .get(getAllCommentsForLink)
+        .get(getAllCommentsForLink);
+
+    app.route('/comment/:linkId')
+        .post(voteForComment)
 }
